@@ -1,0 +1,48 @@
+.mainSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 25px 0;
+  transition: .5s;
+
+  max-width: 80%;
+  border-radius: 1em;
+}
+
+.title {
+  color: gold;
+}
+
+h2 {
+  margin-bottom: .6em;
+  font-family: 'Silkscreen', cursive;
+}
+
+.colorBlock {
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  
+  width: 6.5em;
+  height: 6.5em;
+  transition: .3s;
+}
+
+.colorBlock:hover {
+  border: solid .2em;
+  border-color: rgb(11, 171, 211) !important;
+}
+
+.textInside {
+  visibility: hidden;
+}
+
+@media(max-width: 1100px) {
+  .mainSection {
+    height: 100%;
+  }
+}

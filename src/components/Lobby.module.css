@@ -1,0 +1,12 @@
+.lobby {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 90%;
+  color: white;
+  align-items: center;
+}
+
+.title {
+  color: gold;
+}
