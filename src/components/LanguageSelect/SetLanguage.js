@@ -23,10 +23,19 @@ const SetLanguage = () => {
   const getLanguageValue = (lang) => {
     switch (lang) {
       case "pt-BR":
-        setSelectedLanguage("pt-BR");
+        // Check if new selectedLanguage is already the selectedLanguage
+        if (selectedLanguage === "pt-BR") {
+          window.location.reload()
+        } else {
+          setSelectedLanguage("pt-BR");
+        }
         break;
       case "en-US":
-        setSelectedLanguage("en-US");
+        if (selectedLanguage === "en-US") {
+          window.location.reload()
+        } else {
+          setSelectedLanguage("en-US");
+        }
         break;
       case "es-ES":
         setSelectedLanguage("es-ES");
@@ -38,6 +47,7 @@ const SetLanguage = () => {
         setSelectedLanguage("de-DE");
         break;
       default:
+        console.log("Houve algum erro desconhecido.")
         break;
     }
   };
@@ -47,7 +57,11 @@ const SetLanguage = () => {
     if (selectedLanguage !== localStorage.getItem(I18N_STORAGE_KEY)) {
       localStorage.setItem(I18N_STORAGE_KEY, selectedLanguage)
       window.location.reload()
+    } else {
+
+      //window.location.reload()
     }
+
   }, [selectedLanguage])
 
   // Set display none in "Select Language" card.
@@ -55,6 +69,8 @@ const SetLanguage = () => {
   const saveSession = () => {
     sessionStorage.setItem("display", "none")
   }
+
+  // When select 
 
   return (
     <div className={styles.bkgPage} style={{display: display}}>
@@ -65,35 +81,35 @@ const SetLanguage = () => {
             <li onClick={() => getLanguageValue("pt-BR")}>
               <div className={styles.language}>
                 <img src={Brazil} alt="brazil flag" />
-                <p>Português</p>
+                <p>{i18n.t("languageSelect.pt")}</p>
               </div>
             </li>
 
             <li onClick={() => getLanguageValue("en-US")}>
               <div className={styles.language}>
                 <img src={Usa} alt="united states flag" />
-                <p>Inglês</p>
+                <p>{i18n.t("languageSelect.en")}</p>
               </div>
             </li>
 
             <li onClick={() => getLanguageValue("es-ES")}>
               <div className={styles.language}>
                 <img src={Spain} alt="spain flag" />
-                <p>Espanhol</p>
+                <p>{i18n.t("languageSelect.es")}</p>
               </div>
             </li>
 
             <li onClick={() => getLanguageValue("fr-FR")}>
               <div className={styles.language}>
                 <img src={France} alt="france flag" />
-                <p>Francês</p>
+                <p>{i18n.t("languageSelect.fr")}</p>
               </div>
             </li>
 
             <li onClick={() => getLanguageValue("de-DE")}>
               <div className={styles.language}>
                 <img src={German} alt="german flag" />
-                <p>Alemão</p>
+                <p>{i18n.t("languageSelect.de")}</p>
               </div>
             </li>
           </ul>

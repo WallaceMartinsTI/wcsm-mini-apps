@@ -15,13 +15,20 @@ const Lobby = () => {
         <Header />
       </header>
 
-      <main className="applications">
+      <div className="applications">
         <div className="appHeader">
           <h1 className={styles.title}>{i18n.t("lobby.title")}</h1>
           <h2>{i18n.t("lobby.subtitle")}</h2>
         </div>
-        <Link to="/bkg-color-picker">Gerenciador de Cor de Fundo</Link>
-      </main>
+      </div>
+      <div className={styles.appsList}>
+        <div className={styles.app}>
+          <Link to="/bkg-color-picker">{i18n.t("lobby.apps.bkgColorPicker")}</Link>
+        </div>
+        <div className={styles.app}>
+          <Link to="/guess-the-number">Guess The Number</Link>
+        </div>
+      </div>
     </div>
   );
 };

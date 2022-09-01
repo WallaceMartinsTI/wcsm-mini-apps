@@ -17,9 +17,11 @@ import German from "../images/countryFlags/german.png";
 const Header = () => {
   const [brazil, setBrazil] = useState(false);
   const [usa, setUsa] = useState(false);
+  const [spain, setSpain] = useState(false);
+  const [france, setFrance] = useState(false);
+  const [german, setGerman] = useState(false);
 
   const lang = localStorage.getItem("i18nextLng");
-  console.log(lang);
 
   // Captures the language via localStorage.
   useEffect(() => {
@@ -29,6 +31,18 @@ const Header = () => {
         break;
       case "en-US":
         setUsa(true);
+        break;
+      case "es-ES":
+        setSpain(true);
+        break;
+      case "fr-FR":
+        setFrance(true);
+        break;
+      case "de-DE":
+        setGerman(true);
+        break;
+      default:
+        console.log("Houve algum erro desconhecido.")
         break;
     }
   }, [lang]);
@@ -52,6 +66,21 @@ const Header = () => {
       {usa && (
         <div onClick={() => changeLanguage()} className={styles.flagContainer}>
           <img src={Usa} alt="usa flag" />
+        </div>
+      )}
+      {spain && (
+        <div onClick={() => changeLanguage()} className={styles.flagContainer}>
+          <img src={Spain} alt="spain flag" />
+        </div>
+      )}
+      {france && (
+        <div onClick={() => changeLanguage()} className={styles.flagContainer}>
+          <img src={France} alt="france flag" />
+        </div>
+      )}
+      {german && (
+        <div onClick={() => changeLanguage()} className={styles.flagContainer}>
+          <img src={German} alt="german flag" />
         </div>
       )}
     </div>
