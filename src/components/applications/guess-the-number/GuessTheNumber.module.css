@@ -2,6 +2,53 @@
   color: gold;
 }
 
+.helperContainer {
+  position: absolute;
+  background-color: #000;
+  width: 20%;
+  height: 40%;
+
+  border-radius: 1em;
+  padding: 1em;
+
+  margin: auto;
+  top: 1;
+  bottom: 1;
+  left: 0;
+  right: 0;
+}
+
+.helperContainer div {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px gold;
+  padding: 1em;
+  border-radius: 1em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.helperContainer .helperTitle {
+  font-weight: bold;
+  color: gold;
+}
+
+.helperContainer .helperTitle:nth-child(3) {
+  margin-top: 1em;
+}
+
+.helperContainer button {
+  background-color: #000;
+  border: solid 1px gold;
+  border-radius: 1em;
+  color: gold;
+  margin-top: 1em;
+  width: 50%;
+  height: 2em;
+  transition: .3s;
+  cursor: pointer;
+}
+
 .gameOptions {
   border: solid 1px gold;
   border-radius: 1em;
@@ -46,7 +93,8 @@
   cursor: pointer;
 }
 
-.helpContainer:hover {
+.helpContainer:hover,
+.helperContainer button:hover {
   color: white;
   border-color: white;
 }
@@ -91,4 +139,71 @@
 .buttonContainer button:hover {
   color: white;
   border-color: white;
+}
+
+main {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.game {
+  border: solid 1px gold;
+  border-radius: 1em;
+  width: 100%;
+  height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.numbers {
+  background-color: red;
+  display: flex;
+  gap: 1em;
+  padding: .5em;
+  flex-wrap: wrap;
+}
+
+.numbers div {
+  padding: 1.5em;
+  background-color: green;
+  display: flex;
+}
+
+.play {
+  margin-top: 1em;
+  border: solid 1px gold;
+  border-radius: 1em;
+  padding: .6em;
+  width: 25%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.play div > input {
+  width: 3em;
+  height: 2em;
+  border: solid 2px gold;
+  border-radius: .5em;
+  background-color: #000;
+  color: #fff;
+}
+
+.play .inputs {
+  width: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: .2em;
+}
+
+.inputs input:nth-child(2) {
+  cursor: pointer;
 }
